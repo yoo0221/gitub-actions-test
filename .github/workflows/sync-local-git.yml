@@ -18,9 +18,9 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          sudo cd /home/ubuntu/schooloud_back
-          sudo git pull origin develop
-          sudo cd /home/ubuntu/schooloud_back/schooloud
-          sudo flask --app manage db migrate
-          sudo flask --app manage db upgrade
+          cd /home/ubuntu/schooloud_back
+          git pull origin develop
+          cd /home/ubuntu/schooloud_back/schooloud
+          flask --app manage db migrate
+          flask --app manage db upgrade
           sudo systemctl restart uwsgi
